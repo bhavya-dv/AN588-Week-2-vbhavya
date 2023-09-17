@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Homework 1 for AN/BI 588: Push It! - Preliminary
+# Homework 1 for AN/BI 588: Push It! 
 
 The goal of the homework is to demonstrate our knowledge and understanding of using an intergrated version of RStudio and Github in a collaborative way
 
@@ -82,6 +82,7 @@ Goal: To create a 4-D array populated with numbers counting down from 400 to 1. 
 This created 4x4 5x5 matrices. 
 
 What would the following commands give: 
+
   a. a[1, 1, 1, 2]
   
   My guess is that this will give the element [1,1] from the ,, 1,2 matrix
@@ -139,3 +140,29 @@ primates
 ```
 
 ## Challenge 5
+
+Goal: To make a matrix, that is filled by row (REMEMBER: R fills a matrix by column unless specified otherwise). And coerce matrix and matrix elements to other data structures. 
+
+``` {r challenge5}
+m3 <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), 5, 3, byrow = TRUE)
+m3
+
+#coercing matrix m3 to a data frame
+df <- as.data.frame(m3)
+df
+
+class(m3) 
+class(df) #confirming that df is a data frame
+
+#converting column 2 to be logical valued
+class(df$V2) #initially, class is numeric
+
+df$V2 <- as.logical(df$V2)
+class(df$V2) #now, class is logical
+
+#converting column 3 to be factor valued
+class(df$V3) #initially, it is numeric
+
+df$V3 <- as.factor(df$V3)
+class(df$V3) #now it is factor valued
+```

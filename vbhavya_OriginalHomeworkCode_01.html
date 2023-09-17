@@ -357,8 +357,8 @@ display: none;
 </div>
 
 
-<div id="homework-1-for-anbi-588-push-it---preliminary" class="section level1">
-<h1>Homework 1 for AN/BI 588: Push It! - Preliminary</h1>
+<div id="homework-1-for-anbi-588-push-it" class="section level1">
+<h1>Homework 1 for AN/BI 588: Push It!</h1>
 <p>The goal of the homework is to demonstrate our knowledge and
 understanding of using an intergrated version of RStudio and Github in a
 collaborative way</p>
@@ -461,7 +461,10 @@ x</code></pre>
 <p>Goal: To create a 4-D array populated with numbers counting down from
 400 to 1. The dimensions of the array are (5x5x4x4).</p>
 <p>This created 4x4 5x5 matrices.</p>
-<p>What would the following commands give: a. a[1, 1, 1, 2]</p>
+<p>What would the following commands give:</p>
+<ol style="list-style-type: lower-alpha">
+<li>a[1, 1, 1, 2]</li>
+</ol>
 <p>My guess is that this will give the element [1,1] from the ,, 1,2
 matrix</p>
 <ol start="2" style="list-style-type: lower-alpha">
@@ -704,6 +707,42 @@ primates</code></pre>
 </div>
 <div id="challenge-5" class="section level2">
 <h2>Challenge 5</h2>
+<p>Goal: To make a matrix, that is filled by row (REMEMBER: R fills a
+matrix by column unless specified otherwise). And coerce matrix and
+matrix elements to other data structures.</p>
+<pre class="r"><code>m3 &lt;- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), 5, 3, byrow = TRUE)
+m3</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    3    0    1
+## [2,]   23    1    2
+## [3,]   33    1    1
+## [4,]   42    0    1
+## [5,]   41    0    2</code></pre>
+<pre class="r"><code>#coercing matrix m3 to a data frame
+df &lt;- as.data.frame(m3)
+df</code></pre>
+<pre><code>##   V1 V2 V3
+## 1  3  0  1
+## 2 23  1  2
+## 3 33  1  1
+## 4 42  0  1
+## 5 41  0  2</code></pre>
+<pre class="r"><code>class(m3) </code></pre>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
+<pre class="r"><code>class(df) #confirming that df is a data frame</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>#converting column 2 to be logical valued
+class(df$V2) #initially, class is numeric</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>df$V2 &lt;- as.logical(df$V2)
+class(df$V2) #now, class is logical</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>#converting column 3 to be factor valued
+class(df$V3) #initially, it is numeric</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>df$V3 &lt;- as.factor(df$V3)
+class(df$V3) #now it is factor valued</code></pre>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
 </div>
 </div>
 
