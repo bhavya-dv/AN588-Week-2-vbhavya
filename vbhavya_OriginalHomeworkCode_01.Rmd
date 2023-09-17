@@ -23,13 +23,17 @@ For this, we need to follow the following steps:
 
 3. Make an RMarkdown file with the challenges from Module 3. Push it! and wait for your peers to share their comments. 
 
-##Challenge 1
+## Challenge 1
 
 Goal: To make a vector of 1-word character strings with words from the first sentence in James Joyce's Ulysses. Then, extract every third element from the vector. 
 
 ```{r Ulysses, echo=FALSE, out.width = '50%', fig.align ='center'}
 knitr::include_graphics("ulysses.png")
 ```
+
+    The above graphic is meant to be part of the prettification challenge!
+
+To achieve the goals of Challenge 1, I used the function seq(), which uses a general sequence (named ulysses, in our case) and gives a subsequence which can be in increments of the general sequence. This is what we're doing here. We are asking the seq() function to go through the 1st to 22nd elements of "ulysses" and give us a subset which is every third increment of the original vector. 
 
 ``` {r challenge1}
 #creating a vector with the sentence 
@@ -46,5 +50,30 @@ req_ul <- ulysses[seq(from = 1, to = 22, by = 3)] #the required set of every thi
 
 req_ul
 ```
+## Challenge 2
 
+Goal: to create a n x m matrix using the matrix() function, where n = nrow, m = ncol, and populate it with numbers from 1 to 80. Then, extracting the mentioned, rows, columns and specific elements and assigning them to a variable x. 
+
+It is important to note that usually, matrices in R are filled by column first. 
+
+Note: the outputs when extracting rows and columns from matrices are also matrices. However, in the third case, we get a list of elements as an output. This is due to the nature of the command given. 
+
+``` {r challenge2}
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE) #creating the matrix
+m
+
+#extracting the 2nd, 3rd, and 6th columns
+x <- m[,c(2,3,6)] 
+x
+#extracting the 6th and 8th rows 
+x <- m[c(6,8),]
+x
+#extracting elements from ow 2, column 2 to row 6, column 9
+x <- m[2,2]:m[6,9]
+x
+
+```
+
+
+## Challenge 3
 
