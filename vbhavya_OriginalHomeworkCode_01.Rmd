@@ -77,3 +77,65 @@ x
 
 ## Challenge 3
 
+Goal: To create a 4-D array populated with numbers counting down from 400 to 1. The dimensions of the array are (5x5x4x4). 
+
+This created 4x4 5x5 matrices. 
+
+What would the following commands give: 
+  a. a[1, 1, 1, 2]
+  
+  My guess is that this will give the element [1,1] from the ,, 1,2 matrix
+  
+  b. a[2, 3, 2, ]
+  
+  My guess is that all [2,3] elements from all ,,2 matrices will be given. There should be a list of four elements
+  
+  c. a[1:5, 1:5, 3, 3]
+  
+  My guess is that the output matrix will just be the ,,3,3 matrix
+
+``` {r challenge3}
+a <- array(data = 400:1, dim = c(5,5,4,4))
+a
+
+a[1, 1, 1, 2] # answer matches with guess 
+a[2, 3, 2, ] # answer matches guess
+a[1:5, 1:5, 3, 3] #answer matches guess
+```
+
+## Challenge 4
+Goal: To create a list to simplify primate classification and taxonomy. The main learning from this is that lists can be used as elements within a list. 
+
+Therefore, when tackling a challenge like this, when lists are nested within lists, it is best to start by creating the "innermost" lists first and then making your way outwards. 
+
+```{r challenge4}
+
+#starting with the "innermost" lists in Anthropoidea 
+Platyrrhini <- c("Cebidae","Atelidae","Pitheciidae")
+Catarrhini <- c("Cercopithecidae","Hylobatidae","Hominidae")
+Anthropoidea <- list(Platyrrhini, Catarrhini)
+names(Anthropoidea) <- list("Platyrrhini", "Catarrhini")
+Anthropoidea # " Anthropoidea consists of two lists
+
+Tarsioidea <- "Tarsiidae" #is at the same level as "Anthropoidea"
+
+#Haplorhini is the next "level"
+Haplorhini <- list(Anthropoidea,Tarsioidea)
+names(Haplorhini) <- list("Anthropoidea", "Tarsioidea")
+Haplorhini #consists of two lists, one is a list with two other lists as elements
+
+#For Strepsirhini
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+                "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea") #is at the same level as "Haplorhini" 
+Strepsirhini 
+
+primates <- list(Haplorhini,Strepsirhini)
+names(primates) <- list("Haplorhini", "Strepsirhini")
+primates
+
+```
+
+## Challenge 5
