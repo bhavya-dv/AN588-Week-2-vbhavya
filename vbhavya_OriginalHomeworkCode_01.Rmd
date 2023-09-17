@@ -25,6 +25,11 @@ For this, we need to follow the following steps:
 
 ##Challenge 1
 
+Goal: To make a vector of 1-word character strings with words from the first sentence in James Joyce's Ulysses. Then, extract every third element from the vector. 
+
+```{r Ulysses, echo=FALSE, out.width = '50%', fig.align ='center'}
+knitr::include_graphics("ulysses.png")
+```
 
 ``` {r challenge1}
 #creating a vector with the sentence 
