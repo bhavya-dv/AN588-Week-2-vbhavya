@@ -4,7 +4,7 @@ author: "Bhavya Deepti Vadavalli"
 date: "2023-09-16"
 output: html_document
 ---
-#Peer Commentary:
+# Peer Commentary:
 
 -Hey, do something cool in your yaml.
 
